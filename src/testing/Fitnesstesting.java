@@ -26,7 +26,7 @@ public class Fitnesstesting
 		this.sex = set_Sex();
 		this.age = set_Age();
 		check_Age(this.age);
-		//exit();
+		exit();
 	}
 	
 	
