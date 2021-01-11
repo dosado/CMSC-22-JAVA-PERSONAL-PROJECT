@@ -10,11 +10,11 @@ import java.util.Scanner;		//Module for Scanning User Input
  */
 public class Fitnesstesting 				//Main Class for Programs/Project
 {
-	public static Fitnesstesting person;	//Declaration of the Instance "person" of type Fitnesstesting
+	public static Fitnesstesting person;	        //Declaration of the Instance "person" of type Fitnesstesting
 	public double bmi,weight,height;		//Declaration of double variables for BMI Calculation
-	public String personName;				//Declaration of String variable for Name
-	public int age;							//Declaration of int variable for age
-	public char sex;						//Declaration of char variable for sex
+	public String personName;			//Declaration of String variable for Name
+	public int age;					//Declaration of int variable for age
+	public char sex;				//Declaration of char variable for sex
 	
 	//CONSTRUCTOR
 	/**
@@ -22,12 +22,12 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 	 */
 	public Fitnesstesting() 			//Constructor for the Class
 	{
-		this.personName = set_Name();	//assigning the global variable its Name throught method set_Name()
+		this.personName = set_Name();	        //assigning the global variable its Name throught method set_Name()
 		this.sex = set_Sex();			//Assigning the global variable its sex throught method set_Sex()
 		this.age = set_Age();			//Assigning the global variable its age throught method set_Age()
 		check_Age(this.age);			//Method with the initialized Constructor variable as argument
-										//that checks the age to find what BMI Interpreter it should use.
-		exit();							//Method that closes the Program
+							//that checks the age to find what BMI Interpreter it should use.
+		exit();					//Method that closes the Program
 	}
 	
 	
@@ -50,8 +50,8 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 	//MAIN METHOD
 	public static void main(String[] args) 
 	{
-		person.getInstance();				//checks the Instance to make sure it has only 1 Instance
-		person = new Fitnesstesting();		//Assigns a New Object of Class Fitnesstesting to variable "person"
+		person.getInstance();			                //checks the Instance to make sure it has only 1 Instance
+		person = new Fitnesstesting();		                //Assigns a New Object of Class Fitnesstesting to variable "person"
 	}
 
 	//METHOD BLOCKS
@@ -67,8 +67,8 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 			@SuppressWarnings("resource")
 			Scanner scan_Gen = new Scanner(System.in);	//For User Input of M or F
 			System.out.println("Enter gender (M or F)");
-			sex = scan_Gen.next().charAt(0);			//Get only the First Letter of the User Input
-			if((sex == 'M') || (sex == 'm')) 			//condition to accept either Uppercase of Lowercase letter M
+			sex = scan_Gen.next().charAt(0);		//Get only the First Letter of the User Input
+			if((sex == 'M') || (sex == 'm')) 		//condition to accept either Uppercase of Lowercase letter M
 			{
 				System.out.println("Your Sex is " + sex +", Male");
 				break;
@@ -79,10 +79,10 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 				break;
 			}	
 			else {
-				System.out.println("Invalid Sex");		//Error Catch for Letter other than M and F
+				System.out.println("Invalid Sex");	//Error Catch for Letter other than M and F
 			}
 		}
-		return sex;										//return value of local variable sex to method caller
+		return sex;						//return value of local variable sex to method caller
 	}
 	
 	/**
@@ -92,32 +92,32 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 	 * "Template Method" Behavior Design Pattern
 	 * @param age this.age
 	 */
-	public void check_Age(int age) {					//Method with Parameter age to check the this.age value to assess which BMI Result Interpreter it will use				
-		while(true) {									//While Loop to make sure the method accepts the expected Input
+	public void check_Age(int age) {				//Method with Parameter age to check the this.age value to assess which BMI Result Interpreter it will use				
+		while(true) {						//While Loop to make sure the method accepts the expected Input
 			if((this.age >= 2) && (this.age <= 20)) {	//condition to check If the Age value is between 2 and 20 to indidcate Kids
 				System.out.println(" You are still young ");
-				this.bmi = get_BMI();					//Assigns the variable through the method get_Bmi
-				bmi_Result_kids(this.age,this.bmi);		//Bmi Interpreter for kids with the age and bmi as arguments
+				this.bmi = get_BMI();			//Assigns the variable through the method get_Bmi
+				bmi_Result_kids(this.age,this.bmi);	//Bmi Interpreter for kids with the age and bmi as arguments
 				break;
 			}
 			else if ((this.age >= 21 ) && (this.age <= 35)) {	//If age is between 21 and 35
 				System.out.println("You are in the Young Adults Age group ");
-				this.bmi = get_BMI();							//assigns the Bmi result for the person
-				bmi_Results_adults(this.bmi);					//Bmi Interpreter for adults
+				this.bmi = get_BMI();			//assigns the Bmi result for the person
+				bmi_Results_adults(this.bmi);		//Bmi Interpreter for adults
 				break;
 			}
-			else if ((this.age >= 36) && (this.age <=55)) {		//If age is between 36 and 55
+			else if ((this.age >= 36) && (this.age <=55)) {	//If age is between 36 and 55
 				System.out.println(" You are in the Middle-Aged Adults group ");
-				this.bmi = get_BMI();							//assigns the Bmi result for adults
-				bmi_Results_adults(this.age);					//Interprets the Bmi result for adults
+				this.bmi = get_BMI();			//assigns the Bmi result for adults
+				bmi_Results_adults(this.age);		//Interprets the Bmi result for adults
 				break;
 			}
-			else if ((this.age >= 56) && (this.age <= 120)) { 	//If ages id between 56 and 120
+			else if ((this.age >= 56) && (this.age <= 120)) { //If ages id between 56 and 120
 				System.out.println(" You are in the Older Adults group ");
-				this.bmi = get_BMI();							//assigns the Bmi results of adults
+				this.bmi = get_BMI();			//assigns the Bmi results of adults
 				break;
 			}
-			else {												//Error catch when age is 1 or greater than 120
+			else {						//Error catch when age is 1 or greater than 120
 				System.out.println("Cannot apply BMI Measurement with your current age");
 			}												
 		}
@@ -128,11 +128,11 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 	 * This Method is to determine the BMI result for kids using a switch case that changes the output behaviour of the program.
 	 * @param age this.age
 	 * @param bmi this.bmi
-	 */
-	public void bmi_Result_kids(int age, double bmi) {			//Method to Interpret the BMI Result for Kids
+	 *
+	public void bmi_Result_kids(int age, double bmi) {		//Method to Interpret the BMI Result for Kids
 		System.out.println("BMI for Kids ");
-		switch(age) {											//Switch Case for every age from age 2 to age 20
-																//with every age having a different Interpreted BMI Values
+		switch(age) {						//Switch Case for every age from age 2 to age 20
+								        //with every age having a different Interpreted BMI Values
 		case 2:
 			if(bmi <= 14.7) {
 				System.out.println("Result is : Underweight");
@@ -410,7 +410,7 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 	 * @param bmi BMI value from the this.bmi variable
 	 */
 	public void bmi_Results_adults(double bmi) {		//Method that Interprets the BMI Results for Adults
-		if (bmi < 18.5) 								//Conditional to Interpret the BMI Result
+		if (bmi < 18.5) 				//Conditional to Interpret the BMI Result
 		{
 			System.out.println("BMI For Adults  Result is : Underweight");
 		}
@@ -456,7 +456,7 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 	 * to the this.bmi variable to be used when determining the result of the BMI
 	 * @return result returns the BMI result
 	 */
-	public double get_BMI() {		//Method containing the Formula to solve for the BMI, using the weight and height given
+	public double get_BMI() {		         //Method containing the Formula to solve for the BMI, using the weight and height given
 		Scanner scan_weight = new Scanner(System.in);
 		System.out.println("Enter Weight (Kg) ");
 		double weight = scan_weight.nextDouble();
