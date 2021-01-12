@@ -66,7 +66,7 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 		{
 			@SuppressWarnings("resource")
 			Scanner scan_Gen = new Scanner(System.in);	//For User Input of M or F
-			System.out.println("Enter gender (M or F)");
+			System.out.println("Are you a Male or Female? (M or F)");
 			sex = scan_Gen.next().charAt(0);		//Get only the First Letter of the User Input
 			if((sex == 'M') || (sex == 'm')) 		//condition to accept either Uppercase of Lowercase letter M
 			{
@@ -128,7 +128,7 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 	 * This Method is to determine the BMI result for kids using a switch case that changes the output behaviour of the program.
 	 * @param age this.age
 	 * @param bmi this.bmi
-	 *
+	 */
 	public void bmi_Result_kids(int age, double bmi) {		//Method to Interpret the BMI Result for Kids
 		System.out.println("BMI for Kids ");
 		switch(age) {						//Switch Case for every age from age 2 to age 20
@@ -405,6 +405,7 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 			
 		}
 	}
+	
 	/**
 	 * Method
 	 * @param bmi BMI value from the this.bmi variable
@@ -446,8 +447,9 @@ public class Fitnesstesting 				//Main Class for Programs/Project
 	 */
 	public String set_Name(){		//Method that sets the Name of the person
 		Scanner scan_Name = new Scanner(System.in);
-		System.out.println("Enter Name : ");
+		System.out.println("What is your Name? ");
 		final String name = scan_Name.next();
+		System.out.println("Hello! " + name);
 		return name;
 	}	
 	
