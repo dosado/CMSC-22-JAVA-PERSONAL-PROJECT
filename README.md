@@ -22,3 +22,4 @@ mcdosado@up.edu.ph.CMSC-22-JAVA-PERSONAL-PROJECT
     - used tabs for consistency in indentions
     - line characters do not extend outside of visible screen area
     - Detailed code for every Method to indicate its purpose.
+    - Minimized the use of Nested Loops and Nested Conditionals
