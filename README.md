@@ -1,6 +1,9 @@
 # CMSC-22-JAVA-PERSONAL-PROJECT
 By Michael Dosado   
 
+SOURCE CODE IS AT   
+src folder >  testing folder > Fitnesstesting.java
+
 YOUTUBE VIDEO DEMO LINK  https://www.youtube.com/watch?v=99Uay3oM0Ac
 
 mcdosado@up.edu.ph.CMSC-22-JAVA-PERSONAL-PROJECT
